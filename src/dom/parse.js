@@ -371,6 +371,10 @@ wysihtml5.dom.parse = (function() {
   
   // ------------ attribute checks ------------ \\
   var attributeCheckMethods = {
+    not_empty: function(attributeValue) {
+      return attributeValue || null;
+    },
+
     url: (function() {
       var REG_EXP = /^https?:\/\//i;
       return function(attributeValue) {
